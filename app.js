@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
 
 app.get('/', function(req, res, next) {
-  db.query('SELECT * FROM runner', [], function(err, results) {
+  db.query('SELECT * FROM runner', function(err, results) {
     if (err) {
       return next(err)
     }
